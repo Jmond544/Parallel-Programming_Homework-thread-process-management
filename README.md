@@ -5,16 +5,16 @@
   - Pineda Silupu, Kevin Jair.
 - `Course:` Parallel Programming
 - `University:` UNMSM.
-```c++
-#include <thread>
-#include <iostream>
-#include <cmath>
-#include <string>
-#include <atomic>
-#include <chrono>
-#include <mutex>
-#include <conio.h>
 
+
+## Task reuse:
+Parallel Pursuit: Cat & Mouse in c++
+
+
+
+This C++ program simulates a simple game where a cat and a mouse move on a game board. The program uses multi-threading to control the movements of the cat and mouse concurrently.
+
+```c++
 #ifdef _WIN32
 #include <windows.h>
 #define CLEAR_SCREEN() std::system("cls")
@@ -129,29 +129,45 @@ int main()
 }
 ```
 
+# Solution
+The solution is **here**
 
 
 
+### Show schedule effects
 
+aaaaaaaa
 
+### show or add functions for:
 
+### Join and joinable:
 
+They are located at the end of the program within the `main` function.
+After creating the threads `catThread` and `mouseThread`, there is a loop that waits for both threads to be joinable before calling join.
+If a thread is not `joinable`, the loop breaks, and `join` is called to ensure the threads' completion before the main program terminates.
 
-
-
-
-
-## Show or add functions for:
 - join
   
-### fdffd
-```c++
-// Está función join
+  ```c++
     catThread.join();
-    ouseThread.join();
-```
+    mouseThread.join();
+  ```
 
 - joinable
 
-
+  ```c++
+    if (!catThread.joinable() || !mouseThread.joinable())
+      break;
+  ```
 - detach
+
+  ```c++
+
+  ```
+
+
+
+
+
+
+

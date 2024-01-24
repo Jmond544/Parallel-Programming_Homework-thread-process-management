@@ -36,9 +36,9 @@ void displayBoard(const Animal &cat, const Animal &mouse)
     for (int j = 0; j < BOARD_SIZE; ++j)
     {
       if (i == cat.y && j == cat.x)
-        std::cout << "C ";
+        std::cout << "😺 ";
       else if (i == mouse.y && j == mouse.x)
-        std::cout << "M ";
+        std::cout << "🐭 ";
       else
         std::cout << ". ";
     }

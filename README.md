@@ -160,9 +160,14 @@ If a thread is not `joinable`, the loop breaks, and `join` is called to ensure t
       break;
   ```
 - detach
-
+   
+  The `detach` function in C++ is used to release a thread from dependency on the main thread, allowing it to `continue execution` `independently`.
+   
+  Next, we will present the possible implementation in our cat and mouse code; However, we consider that these lines of code are `unnecessary` in the `program code`.
   ```c++
-
+    // Detach the threads
+    catThread.detach();
+    mouseThread.detach();
   ```
 
 

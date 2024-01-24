@@ -40,7 +40,7 @@ void displayBoard(const Animal &cat, const Animal &mouse)
       else if (i == mouse.y && j == mouse.x)
         std::cout << "🐭 ";
       else
-        std::cout << ". ";
+        std::cout << " . ";
     }
     std::cout << std::endl;
   }

@@ -81,9 +81,27 @@ void mouseThreadFunction(Animal &mouse, const Animal &cat)
 {
   while (!finished)
   {
-    mouse.x += mouse.direction;
-    if (mouse.x <= 0 || mouse.x >= BOARD_SIZE - 1)
-      mouse.direction *= -1;
+    int random = rand() % 5;
+
+    switch (random)
+    {
+    case 0:
+      if (mouse.y > 0)
+        mouse.y -= 1;
+      break;
+    case 1:
+      if (mouse.y < BOARD_SIZE - 1)
+        mouse.y += 1;
+      break;
+    case 2:
+      if (mouse.x > 0)
+        mouse.x -= 1;
+      break;
+    case 3:
+      if (mouse.x < BOARD_SIZE - 1)
+        mouse.x += 1;
+      break;
+    }
 
     if (distance(cat.x, cat.y, mouse.x, mouse.y) < DISTANCE_THRESHOLD)
     {
@@ -94,7 +112,7 @@ void mouseThreadFunction(Animal &mouse, const Animal &cat)
     }
 
     displayBoard(cat, mouse);
-    std::this_thread::sleep_for(std::chrono::milliseconds(300));
+    std::this_thread::sleep_for(std::chrono::milliseconds(200));
   }
 }
 
